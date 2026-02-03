@@ -1,0 +1,60 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+
+interface Project {
+    title: string;
+    description: string;
+    tags: string[];
+    image: string;
+    demoUrl: string;
+    githubUrl: string;
+}
+
+interface Props {
+    projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section class="py-24 relative" id="projects">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+            class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4"
+        >
+            <div>
+                <h2
+                    class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white"
+                >
+                    Proyectos Destacados
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl">
+                    Una selección de mis trabajos recientes, desde aplicaciones
+                    web complejas hasta herramientas de código abierto.
+                </p>
+            </div>
+            <a
+                class="hidden md:flex items-center gap-1 text-primary font-bold hover:gap-2 transition-all"
+                href="#"
+            >
+                Ver todos <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                >
+            </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => <ProjectCard {...project} />)}
+        </div>
+        <div class="mt-8 text-center md:hidden">
+            <a
+                class="inline-flex items-center gap-1 text-primary font-bold hover:gap-2 transition-all"
+                href="#"
+            >
+                Ver todos los proyectos <span
+                    class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                >
+            </a>
+        </div>
+    </div>
+</section>

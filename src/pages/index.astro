@@ -1,11 +1,50 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import TechStack from "../components/TechStack.astro";
+import Projects from "../components/Projects.astro";
+import About from "../components/About.astro";
+import Footer from "../components/Footer.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const projects = [
+	{
+		title: "E-commerce Dashboard",
+		description:
+			"Panel administrativo completo para gestión de inventario, análisis de ventas en tiempo real y gestión de usuarios con roles.",
+		tags: ["React", "Node.js", "Tailwind"],
+		image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxm8L3qzkmPY2_swUEH-nHBasNbHqarwZtzKtkynR43_WZ0xJLFwWryHWlHeh3CpYvEHgR2wurvCUtZtZEFuUhfOhgXJn-rA2BvZ6CuA7OS0Nn3lDYOsN1_gHjhsj1H1UwD4DNh6JeLXAXkxY7wVUhHx4WuBHZKv2ialEcSKsdzRlCoHjCWAsivJ_JCCyl6pagroIkuimIC9k5uivkRoz0ZZ4H2pD2B_Y_zoKEP4fptBang_YOsJS2K6U-TKgGaYvZBAy9NoSdfbA",
+		demoUrl: "#",
+		githubUrl: "#",
+	},
+	{
+		title: "Task Flow Manager",
+		description:
+			"Aplicación de productividad estilo Kanban con autenticación segura, notificaciones por correo y API RESTful.",
+		tags: ["Python", "Django", "PostgreSQL"],
+		image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA7uPFv5m7ZIXPHMvMMQEOn_GSEZD8pqiiRYfQ18tMoK32wRCD-SUimUaKv7vCbYTtvVRgyaQq-wjXNrzJJpeyWb14XTzFWeJE15rhrEytc7oWJMFF5ieNfU5WcQ4bFITkwgOTAwoKywkUwNSEFRQrRHIZoOhhsIz7Qzo6va4MvxLZ-X1ooIqja6fYFqkX_hNL1beOWwsNipuB2ugKohXT33znnauTTh8Um42pL1DXpgFpsKVUCA-vlPDzPn7QpaZTvPkxKQOmQ6r8",
+		demoUrl: "#",
+		githubUrl: "#",
+	},
+	{
+		title: "Real-time Chat App",
+		description:
+			"Plataforma de mensajería instantánea con soporte para salas privadas, envío de archivos y actualizaciones en tiempo real.",
+		tags: ["Socket.io", "Vue.js", "Firebase"],
+		image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA-udYeQr3L1SpW0RUtoIGNKJcwYdKJgjDyRUTqzNLRZBzMhimXS7EkPmw3Fe5N1aO1d2AbMdxQX7mWsnuoTNlGEpQAD6IxFcgR5Rq4BXL5jxWsf1_mEKeJY0W7HfLHvl3WIE9-6nTQDtxt0ibUfIyWEuT4eXl0eQhi4alNJpUh3s7KreNkupqXE2oxEAKaDqaMmiB3Sj-S4GJdzCw-EXs44uHmyL8VT4_-Ggfdj2C8zHmTIQwEk1B8tsmMDGJdmm77lexrepZKoBw",
+		demoUrl: "#",
+		githubUrl: "#",
+	},
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Full Stack Developer Portfolio - Alex">
+	<Header />
+	<main>
+		<Hero />
+		<TechStack />
+		<Projects projects={projects} />
+		<About />
+	</main>
+	<Footer />
 </Layout>
